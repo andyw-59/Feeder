@@ -34,10 +34,15 @@ public class Feeder {
         int days = 0;
         while(numDays > 0)
         {
-            simulateOneDay(numBirds);
-        }
+            if(currentFood == 0) return days;
 
-        return 0;
+            simulateOneDay(numBirds);
+            numDays--;
+            days++;
+
+
+        }
+        return days;
     }
 
     public int getCurrentFood()
